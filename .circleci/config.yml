@@ -438,7 +438,7 @@ workflows:
           requires:
             - orb-tools/pack
       - orb-tools/publish-dev:
-          orb-name: shore-group/aws-eks
+          orb-name: h1nyc/aws-eks
           context: orb-publishing
           requires:
             - queue/block_workflow
@@ -665,7 +665,7 @@ workflows:
             - pre-orb-promotion-check
           filters: *orb_promotion_filters
       - promote-orb-into-production:
-          orb-name: shore-group/aws-eks
+          orb-name: h1nyc/aws-eks
           orb-ref: dev:${CIRCLE_SHA1:0:7}
           context: orb-publishing
           requires:
